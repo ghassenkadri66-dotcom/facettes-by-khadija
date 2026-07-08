@@ -198,7 +198,7 @@ const products = [
 
         name:"Devine Ember",
 
-        gender :"femme",
+        gender :"unisex",
 
         price:"62 DT",
 
@@ -318,7 +318,6 @@ filterButtons.forEach(button=>{
 
         });
 
-        console.log(filter);
 
     });
 
@@ -566,4 +565,69 @@ modal.classList.remove("active");
 
 
 
+/*==========================================
 
+      PARTNERSHIP WHATSAPP
+
+==========================================*/
+
+const partnershipForm = document.querySelector(".partnership-form");
+
+partnershipForm.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    const firstName = document.querySelector("#firstName").value.trim();
+
+    const lastName = document.querySelector("#lastName").value.trim();
+
+    const email = document.querySelector("#email").value.trim();
+
+    const phone = document.querySelector("#phone").value.trim();
+
+    const company = document.querySelector("#company").value.trim();
+
+    const message = document.querySelector("#message").value.trim();
+
+    if(
+        !firstName ||
+        !lastName ||
+        !email ||
+        !phone ||
+        !company ||
+        !message
+    ){
+
+        alert("Veuillez remplir tous les champs.");
+
+        return;
+
+    }
+
+    const whatsappMessage = ` Demande de partenariat
+
+Nom : ${firstName}
+
+Prénom : ${lastName}
+
+Email : ${email}
+
+Téléphone : ${phone}
+
+Entreprise : ${company}
+
+Message :
+
+${message}`;
+
+    const whatsappNumber = "21626889987";
+
+    window.open(
+
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`,
+
+        "_blank"
+
+    );
+
+});
