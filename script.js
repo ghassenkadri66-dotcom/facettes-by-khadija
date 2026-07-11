@@ -52,6 +52,19 @@ links.forEach(link=>{
 
 });
 
+document.addEventListener("click", (e) => {
+
+    if (
+        !navLinks.contains(e.target) &&
+        !menuToggle.contains(e.target)
+    ) {
+
+        navLinks.classList.remove("active");
+
+    }
+
+});
+
 
 window.addEventListener("resize", () => {
 
@@ -631,3 +644,5 @@ ${message}`;
     );
 
 });
+
+

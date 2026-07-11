@@ -167,9 +167,27 @@ button{
 
 /*==================================================
 
-                NAVBAR
+                NAVBAR 
 
 ==================================================*/
+
+
+
+.menu-toggle{
+
+    display:none;
+
+    border:none;
+
+    background:none;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    color:var(--green-color);
+
+}
 
 .navbar{
     max-width: var(--container-width);
@@ -181,7 +199,7 @@ button{
 
     align-items:center;
 
-    padding:0px 20px;
+    padding:10px 20px;
 }
 
 
@@ -196,6 +214,7 @@ button{
     width: 175px;;
 
     transition:var(--transition);
+    height: auto;
     
     
 }
@@ -297,21 +316,7 @@ button{
 
 }
 
-/*==================================================
 
-                MOBILE MENU BUTTON
-
-==================================================*/
-
-.menu-toggle{
-
-    display:none;
-
-    font-size:2rem;
-
-    color:var(--text-color);
-
-}
 
 
 
@@ -438,21 +443,19 @@ button{
 
     border:2px solid var(--gold-color);
 
-    color:var(--green-color);
 
     border-radius:50px;
 
     transition:var(--transition);
 
     font-weight:600;
-
+    background:var(--gold-color);
+    color:#fff;
 }
 
 .hero-btn:hover{
 
-    background:var(--gold-color);
-
-    color:#fff;
+    color:var(--green-color);
 
     transform:translateY(-3px);
 
@@ -633,7 +636,7 @@ background:
 
 .section-heading h2{
 
-    font-size:clamp(3.5rem,5vw,2.8rem);
+    font-size:clamp(2.3rem,5vw,3.5rem);
 
     color:#2f3f28;
 
@@ -1404,6 +1407,121 @@ background:
 
 
 
+
+
+/*==================================================
+
+            PARTNERSHIP
+
+==================================================*/
+
+.partnership{
+
+    padding:120px 0;
+
+    background:#f8f8f5;
+
+}
+
+.partnership-form{
+
+    max-width:850px;
+
+    margin:50px auto 0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.form-group{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.partnership-form input,
+
+.partnership-form textarea{
+
+    width:100%;
+
+    padding:18px 20px;
+
+    border:1px solid #d8d8d8;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:1rem;
+
+    font-family:inherit;
+
+    transition:.3s;
+
+    background:#fff;
+
+}
+
+.partnership-form textarea{
+
+    resize:none;
+    min-height:170px;
+
+
+}
+
+.partnership-form input:focus,
+
+.partnership-form textarea:focus{
+
+    border-color:var(--gold-color);
+
+    box-shadow:0 0 10px rgba(181,145,74,.15);
+
+}
+
+.partnership-btn{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:var(--green-color);
+
+    color:#fff;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.partnership-btn:hover{
+
+    background:#687d4c;
+
+    transform:translateY(-2px);
+
+}
+
+
 /*==================================================
 
                 RESPONSIVE
@@ -1429,39 +1547,52 @@ background:
 
     min-height:100vh;
 
-}
-
-.hero-content{
-
-    text-align:center;
-
-    max-width:100%;
-
-    padding:120px 20px 60px;
+    padding: 0 20px;
 
 
 }
 
+    .hero-content{
+
+        margin:0;
+
+        max-width:100%;
+
+        padding:0;
+
+    }
 
 
-.hero-content h1{
 
-    font-size:41px;
-    margin-left: 150px;
-    width: 100%;
-}
+    .hero-content h1{
 
-.hero-content p{
+        font-size:2.8rem;
 
-    font-size:1rem;
-    margin-left: 150px;
-    width: 100%;
-}
+        margin-bottom:15px;
 
-.hero-btn {
-    margin-left:150px ;
-    width: 100%;
-}
+    }
+
+    .hero-content p{
+
+        font-size:1rem;
+
+        line-height:1.7;
+
+        margin-bottom:30px;
+
+    }
+
+    .hero-btn{
+
+        width:100%;
+
+        max-width:300px;
+
+        padding:16px 0;
+
+        font-size:1rem;
+
+    }
 
 .section-heading{
 
@@ -1554,113 +1685,230 @@ background:
 
 
 
+/*========== MOBILE ==========*/
 
-/*==================================================
+@media (max-width:768px){
 
-            PARTNERSHIP
+    .navbar{
 
-==================================================*/
+        padding:18px 20px;
 
-.partnership{
+        position:relative;
 
-    padding:120px 0;
+    }
 
-    background:#f8f8f5;
+    .menu-toggle{
+
+        display:block;
+
+        z-index:1001;
+
+    }
+
+    .nav-links{
+
+        position:absolute;
+
+        top:100%;
+
+        left:0;
+
+        width:100%;
+
+        background:#fff;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:0;
+
+        max-height:0;
+
+        overflow:hidden;
+
+        transition:.35s ease;
+
+        box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+    }
+
+    .nav-links.active{
+
+        max-height:350px;
+
+        padding:15px 0;
+
+    }
+
+    .nav-links li{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .nav-links a{
+
+        display:block;
+
+        padding:18px;
+
+        width:100%;
+
+        font-size:1rem;
+
+    }
+
+    .hero-image{
+
+        content:url("images/cover_phone.png");
+
+    }
+      
+    .hero-overlay{
+
+  
+    background:rgba(248,245,238,.35);
+
+
+}
+.hero-content{
+
+    transform: translateY(-90px);
+
+}
+.hero-btn{
+
+    margin-top:20px;
 
 }
 
-.partnership-form{
 
-    max-width:850px;
 
-    margin:50px auto 0;
+    .partnership{
 
-    display:flex;
+        padding:70px 20px;
 
-    flex-direction:column;
+    }
 
-    gap:25px;
+    .partnership-form{
+
+        width:100%;
+
+        margin-top:30px;
+
+        gap:16px;
+
+    }
+
+    .form-group{
+
+        grid-template-columns:1fr;
+
+        gap:16px;
+
+    }
+
+    .partnership-form input,
+    .partnership-form textarea{
+
+        padding:15px 18px;
+
+        font-size:.95rem;
+
+        border-radius:10px;
+
+    }
+
+    .partnership-form textarea{
+
+        min-height:120px;
+
+    }
+
+    .partnership-btn{
+
+        padding:15px;
+
+        font-size:1rem;
+
+        border-radius:40px;
+
+    }
+
+
+
+
+    .universe{
+
+        padding:70px 20px;
+
+    }
+
+    .section-heading{
+
+        margin-bottom:30px;
+
+    }
+
+    .section-heading h2{
+
+        font-size:2rem;
+
+        line-height:1.2;
+
+    }
+
+    .section-heading p{
+
+        font-size:.95rem;
+
+        line-height:1.8;
+
+        max-width:100%;
+
+    }
+
+    .flower-line img{
+
+        width:180px;
+
+        height:auto;
+
+    }
+
+    .slider{
+
+        width:100%;
+
+        height:280px;
+
+        border-radius:15px;
+
+    }
+
+    .discover-wrapper{
+
+        margin-top:25px;
+
+    }
+
+    .discover-btn{
+
+        width:100%;
+
+        max-width:280px;
+
+        padding:15px 0;
+
+        font-size:.95rem;
+
+    }
+
+
 
 }
 
-.form-group{
 
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:20px;
-
-}
-
-.partnership-form input,
-
-.partnership-form textarea{
-
-    width:100%;
-
-    padding:18px 20px;
-
-    border:1px solid #d8d8d8;
-
-    border-radius:12px;
-
-    outline:none;
-
-    font-size:1rem;
-
-    font-family:inherit;
-
-    transition:.3s;
-
-    background:#fff;
-
-}
-
-.partnership-form textarea{
-
-    resize:none;
-
-}
-
-.partnership-form input:focus,
-
-.partnership-form textarea:focus{
-
-    border-color:var(--gold-color);
-
-    box-shadow:0 0 10px rgba(181,145,74,.15);
-
-}
-
-.partnership-btn{
-
-    width:100%;
-
-    padding:18px;
-
-    border:none;
-
-    border-radius:50px;
-
-    background:var(--green-color);
-
-    color:#fff;
-
-    font-size:1rem;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.partnership-btn:hover{
-
-    background:#687d4c;
-
-    transform:translateY(-3px);
-
-}
